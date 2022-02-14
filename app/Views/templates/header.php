@@ -10,10 +10,7 @@
     <meta property="og:image" content="<?php echo base_url('/site.png'); ?>" />
     <meta property="og:url" content="https://nannhtikenann.com/" />
     <meta property="og:site_name" content="Nann Htike Nann Services " />
-
-    <link rel="shortcut icon" type="image/x-icon" href="<?php echo base_url(); ?>/assets/images/favicon.svg" />
-
-
+    <link rel="shortcut icon" type="image/x-icon" href="<?php echo base_url(); ?>/logo.jpg" />
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,height=device-height,initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">

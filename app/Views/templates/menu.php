@@ -1,5 +1,5 @@
 <header class="header">
-    <div class="navbar-area">
+    <div class="navbar-area" style="background-color: white;">
         <div class="container">
             <div class="row align-items-center">
                 <div class="col-lg-12">
@@ -26,31 +26,37 @@
                                 <li class="nav-item">
                                     <a href="#" class="active">Oversea Jobs</a>
                                     <ul class="sub-menu">
-                                        <li><a href="browse-jobs.html">Browse Jobs</a></li>
-                                        <li>
-                                            <a href="browse-categories.html">Browse Categories</a>
-                                        </li>
-                                        <li><a href="add-resume.html">Add Resume</a></li>
-                                        <li><a href="job-alerts.html">Job Alerts</a></li>
+                                        <?php
+                                        foreach ($countryies as $key => $value) {
+                                        ?>
+                                            <li>
+                                                <a href="<?php echo site_url('overseajobs/index/' . $value['id']); ?>">
+                                                    <?php echo $value['name']; ?>
+                                                </a>
+                                            </li>
+                                        <?php } ?>
                                     </ul>
                                 </li>
 
                                 <li class="nav-item">
-                                    <a href="#" class="active">Job Seeker </a>
+                                    <a href="<?php echo site_url('jobseeker/index') ?>" class="active">Job Seeker </a>
                                 </li>
 
                                 <li class="nav-item">
-                                    <a href="#" class="active">Working Activities</a>
+                                    <a href="<?php echo site_url('activities/index') ?>" class="active">Working Activities</a>
                                 </li>
 
                                 <li class="nav-item">
-                                    <a href="<?php echo site_url('inquiry/index') ?>">Contact Us </a>
+                                    <a class="active" href="<?php echo site_url('inquiry/index') ?>">Contact Us </a>
                                 </li>
                             </ul>
                         </div>
 
                         <div class="button">
-                            <a href="javacript:" data-toggle="modal" data-target="#signup" class="btn">Sign Up</a>
+                            <a href="tel:09 965 104 520" class="btn">
+                                <i class="lni lni-phone"></i>
+                                Call Now
+                            </a>
                         </div>
                     </nav>
                 </div>

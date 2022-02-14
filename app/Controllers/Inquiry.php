@@ -3,6 +3,7 @@
 namespace App\Controllers;
 
 use App\Controllers\BaseController;
+use App\Models\CountryModel;
 use App\Models\InquiryModel;
 
 class Inquiry extends BaseController
@@ -11,16 +12,20 @@ class Inquiry extends BaseController
     public function __construct()
     {
         $this->ContactModel = new InquiryModel();
+        $this->CountryModel = new CountryModel();
     }
 
 
     public function index()
     {
-        return view('inquiry/index');
+        $data['countryies'] = $this->CountryModel->findAll();
+        return view('inquiry/index', $data);
     }
 
     public function save()
     {
+        $data['countryies'] = $this->CountryModel->findAll();
+
         if ($this->request->getMethod() == "post") {
             $rules = [
                 "name" => "required|min_length[2]|max_length[40]",
@@ -49,6 +54,6 @@ class Inquiry extends BaseController
             }
         }
 
-        return view('inquiry/index');
+        return view('inquiry/index', $data);
     }
 }
